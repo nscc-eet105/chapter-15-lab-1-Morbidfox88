@@ -1,5 +1,6 @@
 import employee
 
+
 '''
     CREATING EMPLOYEES
     Do not edit this section of code. Your classes should work with these tests.
@@ -18,4 +19,25 @@ sales2 = employee.Salesperson('Judy Jetson', 30, 22.50, 4750.00, .05)
     above. Use a single loop to to print the data from each object and the
     results of the calc_pay method for each of them.
 '''
+
+people = [employee1, employee2, sales1, sales2]
+
+for person in people:
+    
+    if type(person) is employee.Employee:
+        print(f"Employee(_Employee__name='{person.get_name()}',_Employee__hours_worked={person.get_worked()},_Employee__hourly_rate={person.get_rate()})")
+        print(f"Total pay for {person.get_name()} is ${person.calc_pay():.2f}")
+        print("-" * 8)
+    elif type(person) is employee.Salesperson:
+        print(f"Salesperson(_Employee__name='{person.get_name()}',_Employee__hours_worked={person.get_worked()},_Employee__hourly_rate={person.get_rate()},_Salesperson__weekly_sales={person.get_sales():.2f},_Salesperson__commission_rate={person.get_commission():.2})")
+        print(f"Total pay for {person.get_name()} is ${person.calc_pay():.2f}")
+        print("-" * 8)
+
+print("\nProcess finished with exit code 0")
+
+
+
+
+
+
 
